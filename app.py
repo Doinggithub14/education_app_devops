@@ -5,14 +5,14 @@ from database import get_all_topics, get_note
 
 # ------------------ PAGE CONFIG ------------------ #
 st.set_page_config(
-    page_title="EduAI - Multi Agent Learning System",
+    page_title="StudyMate - Multi Agent Learning System",
     page_icon="🎓",
     layout="wide"
 )
 
 # ------------------ SIDEBAR ------------------ #
 with st.sidebar:
-    st.title("🎓 EduAI")
+    st.title("StudyMate")
     st.markdown("### Multi-Agent Education System")
     st.markdown("---")
 
@@ -22,7 +22,7 @@ with st.sidebar:
     )
 
     st.markdown("---")
-    st.markdown("### 📚 Saved History")
+    st.markdown("###  Saved History")
 
     topics = get_all_topics()
 
@@ -48,7 +48,7 @@ with st.sidebar:
         st.caption("No saved topics yet")
 
 # ------------------ HEADER ------------------ #
-st.title("🎓 EduAI Learning Assistant")
+st.title("StudyMate Learning Assistant")
 st.markdown("Your AI Researcher + AI Writer working together to generate structured study notes.")
 st.markdown("---")
 
@@ -72,7 +72,7 @@ if user_input:
     })
 
     with st.chat_message("assistant"):
-        with st.spinner("EduAI Agents are researching and writing..."):
+        with st.spinner("StudyMate Agents are researching and writing..."):
             topic_with_level = f"{user_input} (Difficulty: {difficulty})"
             result = run_education_system(topic_with_level)
             st.markdown(result)
@@ -84,4 +84,4 @@ if user_input:
 
 # ------------------ FOOTER ------------------ #
 st.markdown("---")
-st.caption("© 2026 EduAI | Multi-Agent Education System")
+st.caption("© 2026 StudyMate | Multi-Agent Education System")

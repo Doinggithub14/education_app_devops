@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eduai-deployment
+  name: studymate-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: eduai
+      app: studymate
   template:
     metadata:
       labels:
-        app: eduai
+        app: studymate
     spec:
       containers:
-      - name: eduai-container
-        image: siyakusumakar/eduai-app:v1
+      - name: studymate-container
+        image: siyakusumakar/studymate-app:v1
         ports:
         - containerPort: 8501
